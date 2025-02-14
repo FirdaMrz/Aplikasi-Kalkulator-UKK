@@ -114,60 +114,82 @@
     </style>
 </head>
 <body>
-    <div class="kalkulator">
-        <h2>Kalkulator</h2>
-        <div class="input-group">
-            <input type="number" id="angka1" class="input-field" placeholder="Angka 1">
-            <select id="operator" class="select-field">
-                <option value="+" style="color: green;">+</option>
-                <option value="-" style="color: red;">-</option>
-                <option value="*" style="color: blue;">*</option>
-                <option value="/" style="color: orange;">/</option>
-            </select>
-            <input type="number" id="angka2" class="input-field" placeholder="Angka 2">
+        <!--Elemen HTML utama untuk tampilan kalkulator-->
+        <div class="kalkulator">
+            <h2>Kalkulator</h2>
+            <div class="input-group">
+                <!-- Input angka pertama -->
+                <input type="number" id="angka1" class="input-field" placeholder="Angka 1">
+                
+                <!-- Pilihan operator matematika -->
+                <select id="operator" class="select-field">
+                    <option value="+" style="color: green;">+</option>
+                    <option value="-" style="color: red;">-</option>
+                    <option value="*" style="color: blue;">*</option>
+                    <option value="/" style="color: orange;">/</option>
+                </select>
+                
+                <!-- Input angka kedua -->
+                <input type="number" id="angka2" class="input-field" placeholder="Angka 2">
+            </div>
+
+            <!-- Tombol untuk melakukan perhitungan dan mencetak hasil -->
+            <button class="button" onclick="hitung()">Hitung</button>
+            <button class="button" onclick="printHasil()">Print Hasil</button>
+            
+            <!-- Area hasil perhitungan -->
+            <div class="hasil" id="hasil"></div>
+            <div id="print-area" style="display: none;"></div>
         </div>
 
-        <button class="button" onclick="hitung()">Hitung</button>
-        <button class="button" onclick="printHasil()">Print Hasil</button>
-        <div class="hasil" id="hasil"></div>
-        <div id="print-area" style="display: none;"></div>
-    </div>
 
     <script>
-        function hitung() {
+               // Fungsi untuk melakukan perhitungan
+               function hitung() {
+            // Mengambil nilai dari input angka pertama
             let angka1 = parseFloat(document.getElementById("angka1").value);
+            // Mengambil nilai dari input angka kedua
             let angka2 = parseFloat(document.getElementById("angka2").value);
+            // Mengambil operator yang dipilih
             let operator = document.getElementById("operator").value;
             let hasil;
 
+            // Mengecek apakah input angka valid atau tidak
             if (isNaN(angka1) || isNaN(angka2)) {
                 hasil = "Masukkan angka dengan benar!";
             } else {
+                // Melakukan operasi matematika sesuai dengan operator yang dipilih
                 switch (operator) {
-                    case "+": hasil = angka1 + angka2; break;
-                    case "-": hasil = angka1 - angka2; break;
-                    case "*": hasil = angka1 * angka2; break;
-                    case "/": hasil = angka2 !== 0 ? angka1 / angka2 : "Tidak bisa dibagi 0"; break;
+                    case "+": hasil = angka1 + angka2; break; // Penjumlahan
+                    case "-": hasil = angka1 - angka2; break; // Pengurangan
+                    case "*": hasil = angka1 * angka2; break; // Perkalian
+                    case "/": hasil = angka2 !== 0 ? angka1 / angka2 : "Tidak bisa dibagi 0"; break; // Pembagian dengan pengecekan nol
                     default: hasil = "Operator tidak valid";
                 }
             }
 
+            // Menampilkan hasil perhitungan pada elemen hasil
             let tampilanHasil = `${angka1} ${operator} ${angka2} = ${hasil}`;
             document.getElementById("hasil").innerHTML = tampilanHasil;
             document.getElementById("print-area").innerHTML = tampilanHasil;
-            document.getElementById("print-area").style.display = "none";
+            document.getElementById("print-area").style.display = "none"; // Menyembunyikan area cetak
         }
 
+        // Fungsi untuk mencetak hasil perhitungan
         function printHasil() {
+            // Mengambil isi hasil perhitungan
             let hasil = document.getElementById("print-area").innerHTML;
+            
+            // Mengecek apakah hasil sudah tersedia sebelum mencetak
             if (hasil === "") {
                 alert("Hitung dulu sebelum mencetak!");
             } else {
-                document.getElementById("print-area").style.display = "block";
-                window.print();
-                document.getElementById("print-area").style.display = "none";
+                document.getElementById("print-area").style.display = "block"; // Menampilkan area cetak
+                window.print(); // Mencetak halaman
+                document.getElementById("print-area").style.display = "none"; // Menyembunyikan area cetak setelah dicetak
             }
         }
+
     </script>
 </body>
 </html>
