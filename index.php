@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APLIKASI KALKULATOR</title>
     <style>
+
     /* Mengatur tampilan utama halaman */
         body {
             font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins */
@@ -14,6 +15,9 @@
             height: 100vh; /* Mengisi tinggi seluruh viewport */
             background: linear-gradient(135deg, #121212, #3a3a52); /* Latar belakang gradasi */
             margin: 0;
+            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(58, 58, 82, 0.8)), 
+                url('img/bg2.jpg') no-repeat center center fixed;
+            background-size: cover;
         }
 
         /* Mengatur tampilan utama kalkulator */
