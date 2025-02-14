@@ -5,32 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APLIKASI KALKULATOR</title>
     <style>
+    /* Mengatur tampilan utama halaman */
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins */
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background: linear-gradient(135deg, #121212, #3a3a52);
+            height: 100vh; /* Mengisi tinggi seluruh viewport */
+            background: linear-gradient(135deg, #121212, #3a3a52); /* Latar belakang gradasi */
             margin: 0;
         }
 
+        /* Mengatur tampilan utama kalkulator */
         .kalkulator {
             width: 350px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.15); /* Latar belakang transparan */
             padding: 25px;
-            border-radius: 15px;
-            backdrop-filter: blur(15px);
-            box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.1);
+            border-radius: 15px; /* Sudut membulat */
+            backdrop-filter: blur(15px); /* Efek blur di belakang */
+            box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.1); /* Bayangan lembut */
             text-align: center;
             transition: 0.3s ease-in-out;
         }
 
+        /* Efek hover pada kalkulator */
         .kalkulator:hover {
-            transform: scale(1.02);
+            transform: scale(1.02); /* Sedikit membesar saat hover */
             box-shadow: 0px 6px 25px rgba(255, 255, 255, 0.2);
         }
 
+        /* Mengatur tampilan judul */
         h2 {
             color: #fff;
             margin-bottom: 15px;
@@ -39,12 +43,14 @@
             letter-spacing: 1px;
         }
 
+        /* Mengatur tata letak input angka dan operator */
         .input-group {
             display: flex;
             justify-content: space-between;
             gap: 10px;
         }
 
+        /* Mengatur tampilan input dan select */
         .input-field, .select-field {
             width: 100%;
             padding: 12px;
@@ -59,11 +65,13 @@
             transition: all 0.3s ease-in-out;
         }
 
+        /* Efek hover dan focus pada input dan select */
         .input-field:focus, .select-field:hover {
             border-color: #00ff99;
             box-shadow: 0px 0px 10px rgba(0, 255, 153, 0.5);
         }
 
+        /* Mengatur tampilan tombol */
         .button {
             width: 100%;
             padding: 12px;
@@ -79,12 +87,14 @@
             box-shadow: 0px 4px 10px rgba(0, 255, 153, 0.3);
         }
 
+        /* Efek hover pada tombol */
         .button:hover {
             background: linear-gradient(90deg, #00cc77, #009955);
             transform: scale(1.05);
             box-shadow: 0px 6px 15px rgba(0, 255, 153, 0.5);
         }
 
+        /* Mengatur tampilan hasil perhitungan */
         .hasil {
             color: #fff;
             font-size: 20px;
@@ -92,14 +102,16 @@
             margin-top: 15px;
         }
 
+        /* Mengatur warna teks dalam dropdown operator */
         .select-field option[value="+"] { color: green; }
         .select-field option[value="-"] { color: red; }
         .select-field option[value="*"] { color: blue; }
         .select-field option[value="/"] { color: orange; }
 
+        /* Mengatur tampilan saat mencetak */
         @media print {
             body * {
-                visibility: hidden;
+                visibility: hidden; /* Menyembunyikan semua elemen selain hasil */
             }
             #print-area, #print-area * {
                 visibility: visible;
