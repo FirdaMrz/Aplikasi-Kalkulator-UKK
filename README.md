@@ -20,9 +20,3 @@ Aplikasi Kalkulator ini adalah sebuah aplikasi berbasis web yang memungkinkan pe
 4. **Masukkan angka kedua**  
 5. **Klik tombol "Hitung"** untuk melihat hasil  
 6. **Klik tombol "Print Hasil"** jika ingin mencetak hasil perhitungan  
-
-## 🖼️ Tampilan (Screenshots)  
-Tambahkan gambar tampilan aplikasi di sini (opsional).  
-
-## 📜 Lisensi  
-Bebas digunakan atau bisa sertakan lisensi seperti MIT, GPL, dll.  
