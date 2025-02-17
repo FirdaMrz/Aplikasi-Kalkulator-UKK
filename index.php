@@ -16,7 +16,7 @@
             background: linear-gradient(135deg, #121212, #3a3a52); /* Latar belakang gradasi */
             margin: 0;
             background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(58, 58, 82, 0.8)), 
-                url('img/bg2.jpg') no-repeat center center fixed;
+                url('img/bg.jpg') no-repeat center center fixed;
             background-size: cover;
         }
 
@@ -62,8 +62,8 @@
             border-radius: 8px;
             border: none;
             font-size: 16px;
-            background: rgba(255, 255, 255, 0.2);
-            color: #fff;
+            background: rgb(255, 254, 254);
+            color: #white;
             text-align: center;
             outline: none;
             transition: all 0.3s ease-in-out;
